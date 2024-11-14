@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>Fantasy NPC Generator</h1>
+      <h1>Fantasy Character Generator</h1>
       <NPCForm onGenerateNPC={generateNPC} />
       {loading ? <LoadingSpinner /> : (
         <>
