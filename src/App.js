@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import NPCForm from './components/NPCForm';
+import NPCDisplay from './components/NPCDisplay';
+import ImageDisplay from './components/ImageDisplay';
+import LoadingSpinner from './components/LoadingSpinner';
+import useNPCGenerator from './hooks/useNPCGenerator';
+import './styles/App.css';
 
-function App() {
+const App = () => {
+  const { npc, imageUrl, loading, generateNPC } = useNPCGenerator();
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Fantasy NPC Generator</h1>
+      <NPCForm onGenerateNPC={generateNPC} />
+      {loading ? <LoadingSpinner /> : (
+        <>
+          <NPCDisplay npc={npc} />
+          <ImageDisplay imageUrl={imageUrl} />
+        </>
+      )}
     </div>
   );
-}
+};
 
 export default App;
