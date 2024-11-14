@@ -15,12 +15,13 @@ const NPCForm = ({ onGenerateNPC }) => {
     e.preventDefault();
     onGenerateNPC(npcDetails);
   };
+    console.log("🚀 ~ handleSubmit ~ pcDetails:", npcDetails)
 
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" name="weaponType" placeholder="Weapon Type" onChange={handleChange} />
+      {/* <input type="text" name="weaponType" placeholder="Weapon Type" onChange={handleChange} />
       <input type="text" name="armorStyle" placeholder="Armor Style" onChange={handleChange} />
-      <input type="text" name="backgroundScenery" placeholder="Background Scenery" onChange={handleChange} />
+      <input type="text" name="backgroundScenery" placeholder="Background Scenery" onChange={handleChange} /> */}
       <button type="submit">Generate Character</button>
     </form>
   );
