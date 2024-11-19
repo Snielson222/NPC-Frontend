@@ -24,11 +24,24 @@ const ChatBox = ({ npc }) => {
         userMessage,
       });
 
-      const characterResponse = response.data.response;
-      setMessages((prev) => [...prev, { sender: 'character', text: characterResponse }]);
+      // Correctly handle npcResponse from backend
+      const characterResponse = response.data.npcResponse;
+
+      if (!characterResponse) {
+        console.error("Backend did not return a valid npcResponse:", response.data);
+        setMessages((prev) => [
+          ...prev,
+          { sender: 'character', text: 'I didn’t understand that, try asking again!' },
+        ]);
+      } else {
+        setMessages((prev) => [...prev, { sender: 'character', text: characterResponse }]);
+      }
     } catch (error) {
       console.error('Error in chat:', error);
-      setMessages((prev) => [...prev, { sender: 'character', text: 'Something went wrong, try again later!' }]);
+      setMessages((prev) => [
+        ...prev,
+        { sender: 'character', text: 'Something went wrong, try again later!' },
+      ]);
     }
   };
 
@@ -37,7 +50,7 @@ const ChatBox = ({ npc }) => {
       <div className="messages">
         {messages.map((msg, index) => (
           <div key={index} className={`message ${msg.sender}`}>
-            <p>{msg.text}</p>
+            <p>{msg.text || 'No response received.'}</p>
           </div>
         ))}
       </div>
