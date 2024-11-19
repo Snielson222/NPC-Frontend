@@ -14,6 +14,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>Fantasy Character Generator</h1>
+      <img src='favicon2.webp' alt='favicon' style={{ width: '50%' }}/>
       <NPCForm onGenerateNPC={generateNPC} />
       {loading ? (
         <LoadingSpinner />
