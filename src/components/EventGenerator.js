@@ -11,7 +11,7 @@ const EventGenerator = ({ npc }) => {
     setEvent(null); // Clear previous event while loading
 
     try {
-      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/random-event`, {
+      const response = await axios.post(`${process.env.REACT_APP_API_BASE_URL}/api/generate-event`, {
         npcDetails: {
           race: npc.race,
           class: npc.class,
@@ -19,8 +19,8 @@ const EventGenerator = ({ npc }) => {
         },
       });
 
-      // Backend should send event in the `eventDescription` field
-      const eventDescription = response.data.eventDescription;
+      // Updated to correctly handle the 'event' key from the backend
+      const eventDescription = response.data.event;
 
       if (!eventDescription) {
         console.error("Backend did not return a valid event:", response.data);
