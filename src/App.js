@@ -2,9 +2,9 @@ import React from 'react';
 import NPCForm from './components/NPCForm';
 import NPCDisplay from './components/NPCDisplay';
 import ImageDisplay from './components/ImageDisplay';
+import ChatBox from './components/ChatBox';
 import LoadingSpinner from './components/LoadingSpinner';
 import useNPCGenerator from './hooks/useNPCGenerator';
-import './favicon2.webp';
 import './styles/App.css';
 
 const App = () => {
@@ -13,12 +13,14 @@ const App = () => {
   return (
     <div className="App">
       <h1>Fantasy Character Generator</h1>
-      <img src="favicon2.webp" alt="Fantasy Character Generator" style={{ width: '50%' }}  />
       <NPCForm onGenerateNPC={generateNPC} />
-      {loading ? <LoadingSpinner /> : (
+      {loading ? (
+        <LoadingSpinner />
+      ) : (
         <>
           <NPCDisplay npc={npc} />
           <ImageDisplay imageUrl={imageUrl} />
+          {npc && <ChatBox npc={npc} />}
         </>
       )}
     </div>
