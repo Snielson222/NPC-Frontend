@@ -1,0 +1,26 @@
+.event-generator {
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  .event-generator button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .event-generator button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .event {
+    margin-top: 15px;
+    font-style: italic;
+    color: #555;
+  }
+  

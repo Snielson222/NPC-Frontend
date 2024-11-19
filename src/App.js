@@ -3,6 +3,7 @@ import NPCForm from './components/NPCForm';
 import NPCDisplay from './components/NPCDisplay';
 import ImageDisplay from './components/ImageDisplay';
 import ChatBox from './components/ChatBox';
+import EventGenerator from './components/EventGenerator';
 import LoadingSpinner from './components/LoadingSpinner';
 import useNPCGenerator from './hooks/useNPCGenerator';
 import './styles/App.css';
@@ -21,6 +22,7 @@ const App = () => {
           <NPCDisplay npc={npc} />
           <ImageDisplay imageUrl={imageUrl} />
           {npc && <ChatBox npc={npc} />}
+          {npc && <EventGenerator npc={npc} />}
         </>
       )}
     </div>
