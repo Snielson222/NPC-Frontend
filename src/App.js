@@ -10,6 +10,7 @@ import './styles/App.css';
 
 const App = () => {
   const { npc, imageUrl, loading, generateNPC } = useNPCGenerator();
+  console.log("🚀 ~ App ~ npc:", npc)
 
   return (
     <div className="App">

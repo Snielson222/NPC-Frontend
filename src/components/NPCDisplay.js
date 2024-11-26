@@ -1,14 +1,23 @@
-import React from 'react';
+const NPCDisplay = ({ npc }) => {
+  if (!npc) return null;
 
-const NPCDisplay = ({ npc }) => (
-  npc ? (
-    <div>
+  // Remove "Name: ... Backstory:" prefix if it exists
+  const cleanedBackstory = npc.backstory.replace(/^Name:.*?Backstory:/, '').trim();
+
+  return (
+    <div className="npc-display">
       <h2>{npc.name}</h2>
-      <p>Race: {npc.race}</p>
-      <p>Class: {npc.class}</p>
-      <p>{npc.backstory}</p>
+      <p>
+        <strong>Race:</strong> {npc.race}
+      </p>
+      <p>
+        <strong>Class:</strong> {npc.class}
+      </p>
+      <p>
+        <strong>Backstory:</strong> {cleanedBackstory}
+      </p>
     </div>
-  ) : <p>No Character Generated Yet.</p>
-);
+  );
+};
 
 export default NPCDisplay;
