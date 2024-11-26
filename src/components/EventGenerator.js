@@ -38,7 +38,7 @@ const EventGenerator = ({ npc }) => {
 
   return (
     <div className="event-generator">
-      <h2>Random Event Generator</h2>
+      <h2>What Events May Unfold?</h2>
       <button onClick={generateEvent} disabled={loading}>
         {loading ? "Generating Event..." : "Generate Random Event"}
       </button>
