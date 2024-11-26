@@ -5,7 +5,7 @@ const ImageDisplay = ({ imageUrl }) => (
     <div>
       <img src={imageUrl} alt="Generated NPC" />
     </div>
-  ) : <p>Image will appear here after generation.</p>
+  ) : <p>Image Will Appear Here After Generation.</p>
 );
 
 export default ImageDisplay;
