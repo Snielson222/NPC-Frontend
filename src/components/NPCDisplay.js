@@ -1,8 +1,10 @@
 const NPCDisplay = ({ npc }) => {
   if (!npc) return null;
 
-  // Remove "Name: ... Backstory:" prefix if it exists
-  const cleanedBackstory = npc.backstory.replace(/^Name:.*?Backstory:/, '').trim();
+  // Ensure backstory is properly cleaned up
+  const cleanedBackstory = npc.backstory
+    ? npc.backstory.replace(/^Name:\s*.*?\s*Backstory:\s*/, '').trim()
+    : '';
 
   return (
     <div className="npc-display">
