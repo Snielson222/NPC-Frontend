@@ -6,6 +6,10 @@ const ChatBox = ({ npc }) => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState('');
 
+  const originalString = npc.name;
+const cleanedString = originalString.replace("Name: ", "");
+
+
   const sendMessage = async (e) => {
     e.preventDefault();
     if (!input.trim()) return;
@@ -47,6 +51,7 @@ const ChatBox = ({ npc }) => {
 
   return (
     <div className="chatbox">
+      <h1>Talk to {cleanedString}</h1>
       <div className="messages">
         {messages.map((msg, index) => (
           <div key={index} className={`message ${msg.sender}`}>
