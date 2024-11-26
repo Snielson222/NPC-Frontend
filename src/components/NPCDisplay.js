@@ -8,7 +8,7 @@ const NPCDisplay = ({ npc }) => (
       <p>Class: {npc.class}</p>
       <p>{npc.backstory}</p>
     </div>
-  ) : <p>No NPC generated yet.</p>
+  ) : <p>No Character Generated Yet.</p>
 );
 
 export default NPCDisplay;
