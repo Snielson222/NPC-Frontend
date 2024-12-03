@@ -1,3 +1,6 @@
+import { exportCharacterPDF } from './PDFExporter';
+import "../styles/NPCDisplay.css";
+
 const NPCDisplay = ({ npc }) => {
   if (!npc) return null;
 
@@ -18,6 +21,8 @@ const NPCDisplay = ({ npc }) => {
       <p>
         <strong>Backstory:</strong> {cleanedBackstory}
       </p>
+      {npc.imageUrl && <img src={npc.imageUrl} alt={npc.name} style={{ maxWidth: '300px' }} />}
+      <button onClick={() => exportCharacterPDF(npc)}>Export as PDF</button>
     </div>
   );
 };
