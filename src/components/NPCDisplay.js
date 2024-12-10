@@ -15,13 +15,13 @@ const NPCDisplay = ({ npc }) => {
       <button onClick={() => exportCharacterPDF(npc)}>Export & Download Character as PDF</button>
       <h2>{npc.name}</h2>
       <p>
-        <strong>Race:</strong> {npc.race}
+        <strong>Race: </strong> {npc.race}
       </p>
       <p>
-        <strong>Class:</strong> {npc.class}
+        <strong>Class: </strong> {npc.class}
       </p>
       <p>
-        <strong>Backstory:</strong> {cleanedBackstory}
+        <strong>Backstory: </strong> {cleanedBackstory}
       </p>
       
     </div>
