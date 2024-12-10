@@ -12,7 +12,7 @@ const NPCDisplay = ({ npc }) => {
   return (
     <div className="npc-display">
       {npc.imageUrl && <img src={npc.imageUrl} alt={npc.name} style={{ maxWidth: '300px' }} />}
-      <button onClick={() => exportCharacterPDF(npc)}>Export Character as PDF</button>
+      <button onClick={() => exportCharacterPDF(npc)}>Export & Download Character as PDF</button>
       <h2>{npc.name}</h2>
       <p>
         <strong>Race:</strong> {npc.race}
