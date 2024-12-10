@@ -62,7 +62,7 @@ const cleanedString = originalString.replace("Name: ", "");
       <form onSubmit={sendMessage}>
         <input
           type="text"
-          placeholder="Type a message..."
+          placeholder="Speak with them..."
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
